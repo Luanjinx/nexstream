@@ -12,6 +12,15 @@ workflows:
       - name: Set up local.properties
         script: |
           echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+      - name: Set up Keystore & key.properties
+        script: |
+          echo $CM_KEYSTORE | base64 --decode > android/app/release-key.jks
+          cat <<EOF > android/key.properties
+          storePassword=$CM_KEYSTORE_PASSWORD
+          keyPassword=$CM_KEY_PASSWORD
+          keyAlias=$CM_KEY_ALIAS
+          storeFile=release-key.jks
+          EOF
       - name: Get Flutter packages
         script: |
           flutter pub get
