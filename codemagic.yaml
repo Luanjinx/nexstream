@@ -19,7 +19,6 @@ workflows:
           flutter build apk --release --obfuscate=false --split-per-abi
           
     artifacts:
-      - build/**/*.aab
       - build/**/*.apk
 
     # Opsional: Tambahkan block untuk memastikan Gradle wrapper
