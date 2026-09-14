@@ -50,10 +50,7 @@ dependencies:
   #payment gateways
 
   flutter_stripe: ^12.1.1
-  razorpay_flutter: 
-    git:
-      url: https://github.com/razorpay/razorpay-flutter.git
-      ref: master
+  razorpay_flutter: ^1.4.6
       
   uuid: ^4.5.2
   flutterwave_standard:
