@@ -3,9 +3,6 @@ workflows:
     name: Android Build
     max_build_duration: 30
     environment:
-      vars:
-        # Paksa versi Java jika perlu (tergantung error spesifik)
-        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
         
     scripts:
       - name: Setup Flutter
