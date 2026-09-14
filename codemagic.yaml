@@ -1,0 +1,26 @@
+workflows:
+  android-workflow:
+    name: Android Build
+    max_build_duration: 30
+    environment:
+      vars:
+        # Paksa versi Java jika perlu (tergantung error spesifik)
+        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+        
+    scripts:
+      - name: Setup Flutter
+        script: |
+          flutter config --no-analytics
+          flutter pub get
+          
+      - name: Build APK
+        script: |
+          # Tambahkan flag untuk mengabaikan warning deprecation jika perlu
+          flutter build apk --release --obfuscate=false --split-per-abi
+          
+    artifacts:
+      - build/**/*.aab
+      - build/**/*.apk
+
+    # Opsional: Tambahkan block untuk memastikan Gradle wrapper
+    working_directory: /Users/builder/workspace
