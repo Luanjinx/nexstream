@@ -2,8 +2,14 @@ workflows:
   android-workflow:
     name: Android Build
     max_build_duration: 30
+    instance_type: mac_mini_m2 # Opsional: bisa dihapus jika tidak butuh Mac (Android bisa pakai linux), tapi Mac lebih stabil untuk Flutter
     environment:
-        
+      flutter: stable # <--- INI YANG PENTING: Menentukan versi Flutter
+      vars:
+        # Hapus JAVA_HOME, Codemagic akan otomatis mendeteksi
+        FLUTTER_VERSION: "3.19.0" # Sesuaikan dengan versi lokal Anda
+      groups:
+        - android_credentials # <--- Opsional: Jika Anda menyimpan keystore/API di Codemagic UI
     scripts:
       - name: Setup Flutter
         script: |
@@ -12,11 +18,7 @@ workflows:
           
       - name: Build APK
         script: |
-          # Tambahkan flag untuk mengabaikan warning deprecation jika perlu
-          flutter build apk --release --obfuscate=false --split-per-abi
+          flutter build apk --release --split-per-abi
           
     artifacts:
       - build/**/*.apk
-
-    # Opsional: Tambahkan block untuk memastikan Gradle wrapper
-    working_directory: /Users/builder/workspace
