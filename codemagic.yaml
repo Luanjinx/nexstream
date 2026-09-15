@@ -8,6 +8,7 @@ workflows:
       java: 17
       vars:
         GRADLE_OPTS: "-Dorg.gradle.jvmargs='-Xmx6g -XX:MaxMetaspaceSize=1g -XX:+UseG1GC'"
+        FLUTTER_NATIVE_ASSETS: "false"
     scripts:
       - name: Set up local.properties
         script: |
