@@ -1,6 +1,6 @@
 name: streamit_laravel
 description: "A new Flutter project."
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -29,7 +29,7 @@ dependencies:
   wakelock_plus: ^1.4.0
   permission_handler: ^12.0.1
   flutter_custom_tabs: ^2.4.1
-  #QR Code Scanner
+  # QR Code Scanner
   mobile_scanner: ^7.1.4
 
   # XML
@@ -44,11 +44,10 @@ dependencies:
   firebase_crashlytics: ^5.0.6
   firebase_messaging: ^16.1.0
 
-  #Notification
+  # Notification
   flutter_local_notifications: ^20.1.0
 
-  #payment gateways
-
+  # Payment gateways
   flutter_stripe: ^12.1.1
   razorpay_flutter: ^1.4.6
       
@@ -83,15 +82,14 @@ dependencies:
   pod_player: 0.2.2
 
   subtitle: ^0.1.4
-  media_kit: ^1.2.6 # Primary package.
-  media_kit_video: ^2.0.1 # For video rendering.
-  media_kit_libs_video: ^1.0.7 # Native video dependencies.
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.1
+  media_kit_libs_video: ^1.0.7
 
   share_plus: ^12.0.1
 
-  #  Chrome Cast
+  # Chrome Cast
   flutter_chrome_cast: ^1.2.7
-
 
   open_file: ^3.5.10
   screen_protector: ^1.5.1
@@ -116,7 +114,7 @@ dependencies:
   slugify: ^2.0.0
   firebase_analytics: ^12.1.2
 
-  dependency_overrides:
+dependency_overrides:
   objective_c: 8.0.0
 
 dev_dependencies:
@@ -150,3 +148,4 @@ flutter:
     - assets/images/walkthrough_images/
     - assets/images/watching_profile/
     - assets/logos/payment_logo/
+    
