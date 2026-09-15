@@ -6,12 +6,15 @@ workflows:
     environment:
       flutter: stable
       java: 17
+      groups:
+        - android_credentials
       vars:
         GRADLE_OPTS: "-Dorg.gradle.jvmargs='-Xmx6g -XX:MaxMetaspaceSize=1g -XX:+UseG1GC'"
     scripts:
       - name: Set up local.properties
         script: |
           echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+
       - name: Set up Keystore & key.properties
         script: |
           echo $CM_KEYSTORE | base64 --decode > android/app/release-key.jks
@@ -21,16 +24,17 @@ workflows:
           keyAlias=$CM_KEY_ALIAS
           storeFile=release-key.jks
           EOF
+
       - name: Get Flutter packages
         script: |
+          rm -rf .dart_tool/
           flutter clean
           flutter pub get
-      - name: Get Flutter packages
-        script: |
-          flutter pub get
+
       - name: Build Android APK
         script: |
           flutter build apk --release
+
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
       
