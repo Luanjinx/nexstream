@@ -116,6 +116,10 @@ dependencies:
   slugify: ^2.0.0
   firebase_analytics: ^12.1.2
 
+  dependency_overrides:
+  objective_c: 8.0.0
+  
+
 
 
 dev_dependencies:
