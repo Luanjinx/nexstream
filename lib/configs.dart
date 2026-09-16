@@ -36,7 +36,7 @@ String get LOCAL_VIDEO_DOMAIN_URL => '$DOMAIN_URL/storage/streamit-laravel/';
 // - Find press ctrl+F and look for "client_type": 3
 // "client_id" in same object has be pasted here
 
-String get FIREBASE_CLIENT_ID => Platform.isAndroid ? '988658912152-fa0ouj7at8jubc2kgl5rnq0noilke89i.apps.googleusercontent.com' : 'YOUR_IOS_FIREBASE_CLIENT_ID';
+String get FIREBASE_CLIENT_ID => Platform.isAndroid ? '988658912152-fa0ouj7at8jubc2kgl5rnq0noilke89i.apps.googleusercontent.com' : '988658912152-fa0ouj7at8jubc2kgl5rnq0noilke89i.apps.googleusercontent.com';
 
 //region STRIPE
 const STRIPE_URL = 'https://api.stripe.com/v1/payment_intents';
